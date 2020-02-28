@@ -3,8 +3,15 @@
         <div class="label">
             <img src="@/assets/logo.svg" class="logo" alt="logo" @click="jumpToHome">
             <span class="title">NJUSE 酒店管理系统</span>
-            <a-input-search class="search" aria-placeholder="搜索酒店..." size="large" enterButton></a-input-search>
+            
         </div>
+        <a-menu v-model="current" mode="horizontal" theme="light">
+            <a-menu-item key="1"> <a-icon type="home" />首页</a-menu-item>
+            <a-menu-item key="2"> <a-icon type="user" />个人中心</a-menu-item>
+            <a-menu-item key="3"> <a-icon type="switcher" />房间管理</a-menu-item>
+            <a-menu-item key="4"> <a-icon type="file" />订单管理</a-menu-item>
+            
+        </a-menu>
         <div class="logout">
             <a-dropdown placement="bottomCenter">
                 <div class="user">
@@ -38,7 +45,7 @@ export default {
     name: '',
     data() {
         return {
-
+            current: ['1']
         }
     },
     computed: {
@@ -122,5 +129,12 @@ export default {
             }
         }
 
+    }
+</style>
+<style lang="less">
+    .header {
+        .ant-menu {
+            background: none
+        }
     }
 </style>
